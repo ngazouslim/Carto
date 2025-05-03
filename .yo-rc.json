@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.20.8",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "craftics-sharepoint-apps-carto",
+    "libraryId": "80a7d1c9-3970-4ff2-9f5a-f20340232595",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "Craftics.Sharepoint.Apps.Carto",
+    "solutionShortDescription": "Craftics.Sharepoint.Apps.Carto description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

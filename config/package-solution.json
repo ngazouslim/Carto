@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "craftics-sharepoint-apps-carto-client-side-solution",
+    "id": "80a7d1c9-3970-4ff2-9f5a-f20340232595",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Craftics.Sharepoint.Apps.Carto description"
+      },
+      "longDescription": {
+        "default": "Craftics.Sharepoint.Apps.Carto description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "craftics-sharepoint-apps-carto Feature",
+        "description": "The feature that activates elements of the craftics-sharepoint-apps-carto solution.",
+        "id": "5ac8bab3-fadc-451b-b13a-76d765099602",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/craftics-sharepoint-apps-carto.sppkg"
+  }
+}
