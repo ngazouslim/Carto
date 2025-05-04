@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { Reference, FilterOptions, TravelTime } from '../../types';
-import mockReferences from '../../data/mockReferences';
+//import mockReferences from '../../data/mockReferences';
 import { useMap } from './MapContext';
 import { calculateTravelTime, generateMapLinks } from '../../services/navigationService';
 
@@ -17,12 +17,13 @@ interface ReferencesContextType {
   setSelectedReference: (reference: Reference | null) => void;
   updateFilterOptions: (options: Partial<FilterOptions>) => void;
   getRegions: () => string[];
+  getTypes: () => string[];
 }
 
 const ReferencesContext = createContext<ReferencesContextType | undefined>(undefined);
 
-export const ReferencesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [references] = useState<Reference[]>(mockReferences);
+export const ReferencesProvider: React.FC<{ initialReferences: Reference[] }> = ({ initialReferences, children  }) => {
+  const [references] = useState<Reference[]>(initialReferences);
   const [highlightedReference, setHighlightedReference] = useState<Reference | null>(null);
   const [selectedReference, setSelectedReference] = useState<Reference | null>(null);
   const [filteredReferences, setFilteredReferences] = useState<Reference[]>(references);
@@ -31,6 +32,7 @@ export const ReferencesProvider: React.FC<{ children: ReactNode }> = ({ children
   const [filterOptions, setFilterOptions] = useState<FilterOptions>({
     searchText: '',
     region: '',
+    types: [],
   });
 
   const { userLocation, mapBounds } = useMap();
@@ -55,6 +57,16 @@ export const ReferencesProvider: React.FC<{ children: ReactNode }> = ({ children
       results = results.filter(ref => ref.region === filterOptions.region);
     }
     
+    // Filter by types
+
+    if (filterOptions.types.length > 0) {
+
+      results = results.filter(ref => 
+        //filterOptions.types.includes(ref.autresDetails.typeEtablissement.toString())
+        filterOptions.types.indexOf(ref.autresDetails.typeEtablissement.toString()) !== -1
+      );
+
+    }
     // Filter by travel time if available
     if (filterOptions.maxTravelTime && Object.keys(travelTimes).length > 0) {
       results = results.filter(
@@ -119,7 +131,24 @@ export const ReferencesProvider: React.FC<{ children: ReactNode }> = ({ children
 
   const getRegions = (): string[] => {
     const regions = new Set(references.map(ref => ref.region));
-    return Array.prototype.slice.call(regions);
+    // Convert Set to Array
+    const regionsArray: string[] = []; // Initialize an empty array
+
+    regions.forEach(region => {
+      regionsArray.push(region); // Add each region to the array
+    });
+    return regionsArray;
+    //return Array.prototype.slice.call(regions);
+  };
+
+  const getTypes = (): string[] => {
+    const types = new Set(references.map(ref => ref.autresDetails.typeEtablissement));
+    const typesArray: string[] = []; // Initialize an empty array
+    types.forEach(type => {
+      typesArray.push(type); // Add each type to the array
+    });
+    return typesArray;
+    //return Array.from(types);
   };
 
   return (
@@ -136,6 +165,7 @@ export const ReferencesProvider: React.FC<{ children: ReactNode }> = ({ children
         setSelectedReference,
         updateFilterOptions,
         getRegions,
+        getTypes,
       }}
     >
       {children}

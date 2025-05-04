@@ -13,6 +13,7 @@ import { ICartoProps } from './components/ICartoProps';
 
 export interface ICartoWebPartProps {
   description: string;
+  jsonUrl: string; // URL Of the JSON file
 }
 
 export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartProps> {
@@ -27,6 +28,7 @@ export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartPro
       Carto,
       {
         description: this.properties.description,
+        jsonUrl: this.properties.jsonUrl,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -114,6 +116,10 @@ export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartPro
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('jsonUrl', {
+                  label: "URL du fichier JSON",
+                  placeholder: "Entrez l'URL du fichier JSON"
                 })
               ]
             }

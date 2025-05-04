@@ -20,6 +20,8 @@ const mockReferences: Reference[] = [
     adresse: '15 rue de la Paix, 75002 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 45 67 89 10',
+    link: 'https://www.legourmet.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8694,
     longitude: 2.3321,
     autresDetails: {
@@ -52,6 +54,8 @@ const mockReferences: Reference[] = [
     adresse: '42 avenue des Ternes, 75017 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 44 09 85 22',
+    link: 'https://www.maisonfournier.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8787,
     longitude: 2.2950,
     autresDetails: {
@@ -81,6 +85,8 @@ const mockReferences: Reference[] = [
     adresse: '8 boulevard Saint-Germain, 75006 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 43 26 77 88',
+    link: 'https://www.salonelégance.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8534,
     longitude: 2.3388,
     autresDetails: {
@@ -111,8 +117,13 @@ const mockReferences: Reference[] = [
     adresse: '22 rue de la Victoire, 75009 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 88 00 75 60',
+    link: 'https://www.techinnovate.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8738,
     longitude: 2.3417,
+    column0: 'valeur1', 
+    column1: 'C1',
+    column2: 'A2',
     autresDetails: {
       typeEtablissement: 'Entreprise',
       secteur: 'Technologie',
@@ -142,8 +153,13 @@ const mockReferences: Reference[] = [
     adresse: '13 avenue du Président Wilson, 75116 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 53 67 40 00',
+    link: 'https://www.macparis.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8652,
     longitude: 2.2965,
+    column0: 'valeur2', 
+    column1: 'C1',
+    column2: 'A1',
     autresDetails: {
       typeEtablissement: 'Musée',
       theme: 'Art contemporain',
@@ -173,8 +189,14 @@ const mockReferences: Reference[] = [
     adresse: '1 place de la Concorde, 75008 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 47 42 90 00',
+    link: 'https://www.lemagnifique.com',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8656,
     longitude: 2.3212,
+    column0: 'valeur1', 
+    column1: 'C1',
+    column2: 'A2',
+
     autresDetails: {
       typeEtablissement: 'Hôtel',
       classement: '5 étoiles',
@@ -204,6 +226,8 @@ const mockReferences: Reference[] = [
     adresse: '30 rue Saint-André des Arts, 75006 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 43 25 50 10',
+    link: 'https://www.librairie-culturelle.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8533,
     longitude: 2.3429,
     autresDetails: {
@@ -233,8 +257,10 @@ const mockReferences: Reference[] = [
       <p>Cours collectifs et particuliers. Abonnements mensuels ou cartes de 10 séances disponibles.</p>
     `,
     adresse: '5 rue de Charonne, 75011 Paris',
-    region: 'Île-de-France',
+    region: 'PACA',
     telephone: '+33 1 48 05 32 80',
+    link: 'https://www.yogastudiozen.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8536,
     longitude: 2.3723,
     autresDetails: {
@@ -270,6 +296,8 @@ const mockReferences: Reference[] = [
     adresse: '16 rue Bonaparte, 75006 Paris',
     region: 'Île-de-France',
     telephone: '+33 1 43 54 71 95',
+    link: 'https://www.galeriedartmoderne.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8566,
     longitude: 2.3340,
     autresDetails: {
@@ -300,8 +328,10 @@ const mockReferences: Reference[] = [
       <p>Prise de rendez-vous en ligne ou par téléphone. Tiers payant pratiqué.</p>
     `,
     adresse: '28 rue du Faubourg Saint-Antoine, 75012 Paris',
-    region: 'Île-de-France',
+    region: 'Yveline',
     telephone: '+33 1 43 45 60 20',
+    link: 'https://www.santeplus.fr',
+    email: 'reservation@bellevue-hotel.fr',
     latitude: 48.8514,
     longitude: 2.3693,
     autresDetails: {

@@ -7,8 +7,13 @@ export interface Reference {
   adresse: string;
   region: string;
   telephone: string;
+  email: string;
+  link: string;
   latitude: number;
   longitude: number;
+  column0?: string;
+  column1?: string;
+  column2?: string;
   autresDetails: Record<string, any>;
 }
 
@@ -34,5 +39,6 @@ export interface MapBounds {
 export interface FilterOptions {
   searchText: string;
   region: string;
+  types: string[];
   maxTravelTime?: number;
 }

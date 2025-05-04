@@ -1,37 +1,32 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
-import { StrictMode } from 'react';
+import { StrictMode, useEffect, useState } from 'react';
 import type { ICartoProps } from './ICartoProps';
+import { Reference } from '../types';
 import MapView from './subComponents/map/MapView';
 import Sidebar from './subComponents/sidebar/Sidebar';
 import DetailModal from './subComponents/modals/DetailModal';
-import { useReferences } from './context/ReferencesContext';
+//import { useReferences } from './context/ReferencesContext';
 import { useMap } from './context/MapContext';
 import { MapProvider } from './context/MapContext';
-import styles from './Carto.module.scss';
 import { ReferencesProvider } from './context/ReferencesContext';
+import styles from './Carto.module.scss';
 import './tailwind.css';
 import './tailwind.generated.css';
-import { Reference } from '../types';
 
-const CartoContent: React.FC<{ hasTeamsContext: boolean }> = ({ hasTeamsContext }) => {
-  const { selectedReference } = useReferences();
+
+const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
+
   const { userLocation } = useMap();
 
+
+
+  //render
   return (
     <div>
-      <div>
-            <h1>Selected Reference</h1>
-            <p>{selectedReference ? selectedReference.adresse : 'No reference selected'}</p>
-            <h1>References</h1>
-            <ul>
-              {useReferences().references.map((ref: Reference, index) => (
-                <li key={index}>{ref.titre}</li>
-              ))}
-            </ul>
-          </div>
+      
 
-      <section className={`${styles.carto} ${hasTeamsContext ? styles.teams : ''}`}>
+      <section className={`${styles.carto} ${props.hasTeamsContext ? styles.teams : ''}`}>
       {/* <div className="flex h-screen w-screen overflow-hidden"> */}
       <div className="flex h-screen overflow-hidden">
       <div className="relative flex-grow">
@@ -50,14 +45,46 @@ const CartoContent: React.FC<{ hasTeamsContext: boolean }> = ({ hasTeamsContext 
   );
 };
 
+
+// Main Carto component to encapsulate the context providers
 const Carto: React.FC<ICartoProps> = (props) => {
-  const { hasTeamsContext } = props;
+  const [references, setReferences] = useState<Reference[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  // Fetch JSON data
+  useEffect(() => {
+    if (props.jsonUrl) {
+      fetch(props.jsonUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Erreur lors du chargement du fichier JSON : ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+         
+          console.log('Fetched references:', data);
+          setReferences(data)
+        })
+        .catch(error => {
+          console.error(error);
+          setError(error.message)
+        });
+    }
+  }, [props.jsonUrl]); 
+
+  if (error) {
+    return <div>Erreur : {error}</div>;
+  }
+
+  if (references.length === 0) {
+    return <div>Chargement des données...</div>;
+  }
 
   return (
     <StrictMode>
       <MapProvider>
-        <ReferencesProvider>
-          <CartoContent hasTeamsContext={hasTeamsContext} />
+        <ReferencesProvider initialReferences={references}>
+          <CartoContent props={props} />
         </ReferencesProvider>
       </MapProvider>
     </StrictMode>
