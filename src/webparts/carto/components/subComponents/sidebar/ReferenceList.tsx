@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FixedSizeList as List } from 'react-window';
 import { useReferences } from '../../context/ReferencesContext';
 import ReferenceItem from './ReferenceItem';
-import * as strings from 'CartoWebPartStrings';
+import { I18nManager } from '../../../loc/i18nManager';
 
 const ReferenceList: React.FC = () => {
   const { filteredReferences } = useReferences();
@@ -12,8 +12,8 @@ const ReferenceList: React.FC = () => {
     return (
       <div className="h-full flex items-center justify-center p-6 text-center">
         <div>
-          <p className="text-gray-600 mb-2">{strings.List_noResults}</p>
-          <p className="text-sm text-gray-500">{strings.List_noResultsMessage}</p>
+          <p className="text-gray-600 mb-2">{I18nManager.getString('List_noResults')}</p>
+          <p className="text-sm text-gray-500">{I18nManager.getString('List_noResultsMessage')}</p>
         </div>
       </div>
     );

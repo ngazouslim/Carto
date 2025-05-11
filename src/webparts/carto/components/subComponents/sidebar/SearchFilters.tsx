@@ -2,7 +2,8 @@ import * as React from 'react';
 import { useReferences } from '../../context/ReferencesContext';
 import { Search, Filter, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import * as strings from 'CartoWebPartStrings';
+//import * as strings from 'CartoWebPartStrings';
+import { I18nManager } from '../../../loc/i18nManager';
 
 const SearchFilters: React.FC = () => {
   const { 
@@ -60,7 +61,7 @@ const SearchFilters: React.FC = () => {
         </div>
         <input
           type="text"
-          placeholder={strings.List_plh_search}
+          placeholder={I18nManager.getString('List_plh_search')}
           className="input pl-10"
           value={filterOptions.searchText}
           onChange={(e) => updateFilterOptions({ searchText: e.target.value })}
@@ -78,7 +79,7 @@ const SearchFilters: React.FC = () => {
         <div className="px-4 py-3 space-y-3">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              {strings.List_lbl_Region}
+              {I18nManager.getString('List_lbl_Region')}
             </label>
             <select
               className="input"
@@ -86,7 +87,7 @@ const SearchFilters: React.FC = () => {
               onChange={(e) => updateFilterOptions({ region: e.target.value })}
               
             >
-              <option value="">{strings.List_ctrl_AllREgions}</option>
+              <option value="">{I18nManager.getString('List_ctrl_AllREgions')}</option>
               {regions.map(region => (
                 <option key={region} value={region}>
                   {region}
@@ -97,7 +98,7 @@ const SearchFilters: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              {strings.List_lbl_Types}
+              {I18nManager.getString('List_lbl_Types')}
             </label>
             <div className="relative" ref={dropdownRef}>
               <div 
@@ -131,7 +132,7 @@ const SearchFilters: React.FC = () => {
                   value={typeSearchText}
                   onChange={(e) => setTypeSearchText(e.target.value)}
                   onFocus={() => setIsTypeDropdownOpen(true)}
-                  placeholder={filterOptions.types.length === 0 ? strings.List_ctrl_TypesPlh : ""}
+                  placeholder={filterOptions.types.length === 0 ? I18nManager.getString('List_ctrl_TypesPlh') : ""}
                 />
               </div>
               
@@ -163,7 +164,7 @@ const SearchFilters: React.FC = () => {
           {hasTravelTimes && (
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                {strings.List_ctrl_Time}
+                {I18nManager.getString('List_ctrl_Time')}
               </label>
               <select
                 className="input"
@@ -172,12 +173,12 @@ const SearchFilters: React.FC = () => {
                   maxTravelTime: e.target.value ? parseInt(e.target.value) : undefined 
                 })}
               >
-                <option value="">{strings.List_ctrl_AllTime}</option>
-                <option value="10">{strings.List_lbl_lessThan} 10 min</option>
-                <option value="20">{strings.List_lbl_lessThan} 20 min</option>
-                <option value="30">{strings.List_lbl_lessThan} 30 min</option>
-                <option value="45">{strings.List_lbl_lessThan} 45 min</option>
-                <option value="60">{strings.List_lbl_lessThan} 60 min</option>
+                <option value="">{I18nManager.getString('List_ctrl_AllTime')}</option>
+                <option value="10">{I18nManager.getString('List_lbl_lessThan')} 10 min</option>
+                <option value="20">{I18nManager.getString('List_lbl_lessThan')}  20 min</option>
+                <option value="30">{I18nManager.getString('List_lbl_lessThan')}  30 min</option>
+                <option value="45">{I18nManager.getString('List_lbl_lessThan')}  45 min</option>
+                <option value="60">{I18nManager.getString('List_lbl_lessThan')}  60 min</option>
               </select>
             </div>
           )}

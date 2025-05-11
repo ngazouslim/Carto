@@ -18,7 +18,7 @@ declare interface ICartoWebPartStrings {
   List_Title: string;
   List_lbl_foundReferences: string;
   List_btn_MyPosition: string;
-  List_btn_UseMyPosition: string;,
+  List_btn_UseMyPosition: string;
   List_plh_search: string;
   List_btn_filter: string;
   List_lbl_Region: string;
