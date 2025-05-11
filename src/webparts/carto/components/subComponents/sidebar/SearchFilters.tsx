@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useReferences } from '../../context/ReferencesContext';
 import { Search, Filter, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import * as strings from 'CartoWebPartStrings';
 
 const SearchFilters: React.FC = () => {
   const { 
@@ -59,7 +60,7 @@ const SearchFilters: React.FC = () => {
         </div>
         <input
           type="text"
-          placeholder="Rechercher par nom ou adresse"
+          placeholder={strings.List_plh_search}
           className="input pl-10"
           value={filterOptions.searchText}
           onChange={(e) => updateFilterOptions({ searchText: e.target.value })}
@@ -77,7 +78,7 @@ const SearchFilters: React.FC = () => {
         <div className="px-4 py-3 space-y-3">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Région
+              {strings.List_lbl_Region}
             </label>
             <select
               className="input"
@@ -85,7 +86,7 @@ const SearchFilters: React.FC = () => {
               onChange={(e) => updateFilterOptions({ region: e.target.value })}
               
             >
-              <option value="">Toutes les régions</option>
+              <option value="">{strings.List_ctrl_AllREgions}</option>
               {regions.map(region => (
                 <option key={region} value={region}>
                   {region}
@@ -96,7 +97,7 @@ const SearchFilters: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Types d'établissement
+              {strings.List_lbl_Types}
             </label>
             <div className="relative" ref={dropdownRef}>
               <div 
@@ -130,7 +131,7 @@ const SearchFilters: React.FC = () => {
                   value={typeSearchText}
                   onChange={(e) => setTypeSearchText(e.target.value)}
                   onFocus={() => setIsTypeDropdownOpen(true)}
-                  placeholder={filterOptions.types.length === 0 ? "Sélectionner des types..." : ""}
+                  placeholder={filterOptions.types.length === 0 ? strings.List_ctrl_TypesPlh : ""}
                 />
               </div>
               
@@ -162,7 +163,7 @@ const SearchFilters: React.FC = () => {
           {hasTravelTimes && (
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Temps de trajet max (minutes)
+                {strings.List_ctrl_Time}
               </label>
               <select
                 className="input"
@@ -171,12 +172,12 @@ const SearchFilters: React.FC = () => {
                   maxTravelTime: e.target.value ? parseInt(e.target.value) : undefined 
                 })}
               >
-                <option value="">Tous les temps</option>
-                <option value="10">Moins de 10 min</option>
-                <option value="20">Moins de 20 min</option>
-                <option value="30">Moins de 30 min</option>
-                <option value="45">Moins de 45 min</option>
-                <option value="60">Moins de 60 min</option>
+                <option value="">{strings.List_ctrl_AllTime}</option>
+                <option value="10">{strings.List_lbl_lessThan} 10 min</option>
+                <option value="20">{strings.List_lbl_lessThan} 20 min</option>
+                <option value="30">{strings.List_lbl_lessThan} 30 min</option>
+                <option value="45">{strings.List_lbl_lessThan} 45 min</option>
+                <option value="60">{strings.List_lbl_lessThan} 60 min</option>
               </select>
             </div>
           )}

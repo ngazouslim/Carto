@@ -822,6 +822,10 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 70vh;
 }
 
+.max-h-screen {
+  max-height: 100vh;
+}
+
 .min-h-\[42px\] {
   min-height: 42px;
 }

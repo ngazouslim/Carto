@@ -13,6 +13,7 @@ import { ReferencesProvider } from './context/ReferencesContext';
 import styles from './Carto.module.scss';
 import './tailwind.css';
 import './tailwind.generated.css';
+import * as strings from 'CartoWebPartStrings';
 
 
 const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
@@ -33,7 +34,7 @@ const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
         <MapView />
         {!userLocation && (
           <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md z-[1000] text-sm">
-            Activez la géolocalisation pour de meilleurs résultats
+            {strings.Map_geolocateMessage}
           </div>
         )}
       </div>

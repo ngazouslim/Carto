@@ -4,6 +4,7 @@ import SearchFilters from './SearchFilters';
 import ReferenceList from './ReferenceList';
 import { useMap } from '../../context/MapContext';
 import { MapPin, Compass } from 'lucide-react';
+import * as strings from 'CartoWebPartStrings';
 
 const Sidebar: React.FC = () => {
   const { filteredReferences } = useReferences();
@@ -14,7 +15,8 @@ const Sidebar: React.FC = () => {
       <div className="p-4 border-b">
         <h1 className="text-xl font-bold mb-2">Explorer les références</h1>
         <p className="text-sm text-gray-600 mb-3">
-          {filteredReferences.length} établissement{filteredReferences.length !== 1 ? 's' : ''} trouvé{filteredReferences.length !== 1 ? 's' : ''}
+          {/* {filteredReferences.length} établissement{filteredReferences.length !== 1 ? 's' : ''} trouvé{filteredReferences.length !== 1 ? 's' : ''} */}
+          {filteredReferences.length} {strings.List_lbl_foundReferences}
         </p>
         
         <button 
@@ -24,12 +26,12 @@ const Sidebar: React.FC = () => {
           {userLocation ? (
             <>
               <MapPin className="mr-2" size={16} />
-              Position localisée
+              {strings.List_btn_MyPosition}
             </>
           ) : (
             <>
               <Compass className="mr-2" size={16} />
-              Utiliser ma position
+              {strings.List_btn_UseMyPosition}
             </>
           )}
         </button>
