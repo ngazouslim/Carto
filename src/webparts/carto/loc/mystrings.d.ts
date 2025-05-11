@@ -13,7 +13,6 @@ declare interface ICartoWebPartStrings {
   UnknownEnvironment: string;
 
 
-
   // Liste
   List_Title: string;
   List_lbl_foundReferences: string;
