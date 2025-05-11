@@ -15,6 +15,7 @@ export interface ICartoWebPartProps {
   description: string;
   jsonUrl: string; // URL Of the JSON file
   jsonI18nUrl: string; // URL Of the JSON file for i18n
+  customActions: string; // JSON string of custom actions
 }
 
 export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartProps> {
@@ -24,6 +25,13 @@ export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartPro
 
   public render(): void {
 
+    let parsedcustomActions: { title: string; id: string; class?: string }[] = [];
+
+    try {
+      parsedcustomActions = JSON.parse(this.properties.customActions);
+    } catch (error) {
+      console.error("Invalid JSON for custom actions:", error);
+    }
 
     const element: React.ReactElement<ICartoProps> = React.createElement(
       Carto,
@@ -31,6 +39,7 @@ export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartPro
         description: this.properties.description,
         jsonUrl: this.properties.jsonUrl,
         jsonI18nUrl: this.properties.jsonI18nUrl,
+        customActions: parsedcustomActions,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -126,6 +135,14 @@ export default class CartoWebPart extends BaseClientSideWebPart<ICartoWebPartPro
                 PropertyPaneTextField('jsonI18nUrl', {
                   label: "URL du fichier JSON i18n",
                   placeholder: "Entrez l'URL du fichier JSON"
+                }),
+                PropertyPaneTextField('customActions', {
+                  label: "Custom Actions Table (JSON)",
+                  multiline: true,
+                  placeholder: `[
+  { "title": "Action 1", "id": "idc1", "class": "class1" },
+  { "title": "Action 2", "id": "idc2" }
+]`
                 })
               ]
             }

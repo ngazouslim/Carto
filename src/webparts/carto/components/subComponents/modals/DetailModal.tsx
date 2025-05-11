@@ -3,8 +3,14 @@ const { useRef, useEffect } = React;
 import { useReferences } from '../../context/ReferencesContext';
 import { useMap } from '../../context/MapContext';
 import { X, MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
+import { I18nManager } from '../../../loc/i18nManager';
+//const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
 
-const DetailModal: React.FC = () => {
+export interface IDetailModalProps {
+  customActions: { title: string; id: string; class?: string }[]; // Array of custom actions
+}
+//const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
+const DetailModal: React.FC<{ props: IDetailModalProps }> = ({props}) => {
   const { 
     selectedReference, 
     setSelectedReference,
@@ -55,7 +61,7 @@ const DetailModal: React.FC = () => {
     const details = selectedReference.autresDetails;
     return (
       <div className="mt-4">
-        <h3 className="font-semibold text-lg mb-2">Plus d'informations</h3>
+        <h3 className="font-semibold text-lg mb-2">{I18nManager.getString('Details_lbl_additionalInformation')}</h3>
         <div className="grid grid-cols-2 gap-2 text-sm">
           {Object.keys(details).map(key => {
             const value = details[key];
@@ -180,7 +186,24 @@ const DetailModal: React.FC = () => {
                       </div>
                     )}
                     
+                    
+
+                    {/* Render additional details */}
                     {renderDetails()}
+                    
+                    {/* Render custom actions if provided */}
+                    <div className="mt-6 additionalActions">
+                    <h3 className="font-semibold text-lg mb-2">{I18nManager.getString('Details_lbl_moreActions')}</h3>
+                    {props.customActions && props.customActions.map((action, index) => (
+                      <button 
+                        key={index} 
+                        className={`btn ${action.class} btn-outline flex items-center justify-center mb-2`}
+                        onClick={() => console.log(`Custom action triggered: ${action.id}`)}
+                      >
+                        {action.title}
+                      </button>
+                    ))}
+                    </div>
                     
                     <div className="mt-6">
                       <h3 className="font-semibold text-lg mb-2">Description</h3>
@@ -189,6 +212,8 @@ const DetailModal: React.FC = () => {
                         dangerouslySetInnerHTML={{ __html: selectedReference.descriptionRich }} 
                       />
                     </div>
+                    
+                    
                   </div>
                 </div>
               </div>

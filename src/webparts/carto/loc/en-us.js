@@ -35,7 +35,8 @@ define([], function() {
     "Map_ctrl_Popup_btn_MoreDetail": "View details",
 
     "Details_lbl_additionalInformation": "More information",
-    "Details_lbl_Description": "Description"
+    "Details_lbl_Description": "Description",
+    "Details_lbl_moreActions": "Actions",
     
   }
 });

@@ -40,6 +40,7 @@ declare interface ICartoWebPartStrings {
   // Détails
   Details_lbl_additionalInformation: string;
   Details_lbl_Description: string;
+  Details_lbl_moreActions: string;
 
 }
 

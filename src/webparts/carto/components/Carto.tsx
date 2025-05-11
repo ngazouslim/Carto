@@ -40,7 +40,7 @@ const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
         )}
       </div>
       <Sidebar />
-      <DetailModal />
+      <DetailModal props={{ customActions: props.customActions }} />
     </div>
       </section>
     </div>

@@ -35,7 +35,8 @@ define([], function() {
 
 
     "Details_lbl_additionalInformation": "Plus d'informations",
-    "Details_lbl_Description": "Description"
+    "Details_lbl_Description": "Description",
+    "Details_lbl_moreActions": "Actions",
 
     
   }
