@@ -2,7 +2,7 @@
 
 ## Summary
 
-The Carto web part is a SharePoint Framework (SPFx) web part designed to display references, maps, and custom actions. It supports dynamic data loading via JSON files, internationalization (i18n), and customizable actions.
+The solution consists of a SharePoint Framework (SPFx) web part named Carto that allows users to display references, maps, and custom actions. It supports dynamic data loading via JSON files, internationalization (i18n), and customizable actions. The web part is highly customizable and can be easily integrated into SharePoint pages to enhance user experience.
 
 
 
@@ -19,9 +19,10 @@ The Carto web part is a SharePoint Framework (SPFx) web part designed to display
 
 ## Solution
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| Solution       | Author(s)                                          |
+| -------------- | -------------------------------------------------- |
+| Carto web part | NGAZOU Salim form CRAFTICS - France - PARIS        |
+
 
 ## Version history
 
