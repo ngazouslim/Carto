@@ -21,7 +21,7 @@ The solution consists of a SharePoint Framework (SPFx) web part named Carto that
 
 | Solution       | Author(s)                                          |
 | -------------- | -------------------------------------------------- |
-| Carto web part | NGAZOU Salim form CRAFTICS - France - PARIS        |
+| Carto web part | NGAZOU Salim /  CRAFTICS - France                  |
 
 
 ## Version history
