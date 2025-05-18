@@ -655,6 +655,10 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -676,20 +680,12 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0px;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .left-0 {
   left: 0px;
 }
 
 .left-1\/2 {
   left: 50%;
-}
-
-.right-0 {
-  right: 0px;
 }
 
 .right-3 {
@@ -704,16 +700,12 @@ h1, h2, h3, h4, h5, h6 {
   top: 1rem;
 }
 
+.z-8 {
+  z-index: 8;
+}
+
 .z-10 {
   z-index: 10;
-}
-
-.z-30 {
-  z-index: 30;
-}
-
-.z-\[1000\] {
-  z-index: 1000;
 }
 
 .mb-1 {
@@ -794,10 +786,6 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-24 {
   height: 6rem;
 }
@@ -816,14 +804,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .max-h-60 {
   max-height: 15rem;
-}
-
-.max-h-\[70vh\] {
-  max-height: 70vh;
-}
-
-.max-h-screen {
-  max-height: 100vh;
 }
 
 .min-h-\[42px\] {
@@ -852,10 +832,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .w-full {
   width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .min-w-\[60px\] {
@@ -953,10 +929,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -972,11 +944,6 @@ h1, h2, h3, h4, h5, h6 {
 .rounded-t-lg {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-}
-
-.rounded-t-xl {
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
 }
 
 .border {
@@ -1221,6 +1188,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.dialog-details-content-card {
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .leaflet-container {

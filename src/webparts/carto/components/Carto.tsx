@@ -34,7 +34,7 @@ const CartoContent: React.FC<{ props: ICartoProps }> = ({ props }) => {
       <div className="relative flex-grow">
         <MapView />
         {!userLocation && (
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md z-[1000] text-sm">
+          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md z-8 text-sm">
             {I18nManager.getString('Map_geolocateMessage')}
           </div>
         )}

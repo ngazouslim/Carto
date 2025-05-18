@@ -1,0 +1,110 @@
+[
+    {
+      "id": "1",
+      "titre": "Restaurant Le Gourmet",
+      "image": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descriptionCourte": "Cuisine française raffinée au cœur de la ville",
+      "descriptionRich": "<h3>Le Gourmet</h3><p>Un voyage culinaire à travers les saveurs de la France, préparé par notre chef étoilé Jean Dupont.</p><p>Notre restaurant propose :</p><ul><li>Des ingrédients locaux et de saison</li><li>Une carte des vins exceptionnelle</li><li>Un cadre élégant et chaleureux</li></ul><p>Ouvert du mardi au samedi, de 19h à 23h. Réservation conseillée.</p>",
+      "adresse": "15 rue de la Paix, 75002 Paris",
+      "region": "Île-de-France",
+      "telephone": "+33 1 45 67 89 10",
+      "link": "https://www.legourmet.fr",
+      "email": "reservation@bellevue-hotel.fr",
+      "latitude": 48.8694,
+      "longitude": 2.3321,
+      "autresDetails": {
+        "typeEtablissement": "Restaurant",
+        "cuisine": "Française",
+        "prixMoyen": "75€",
+        "notations": [
+          { "source": "Michelin", "note": "2 étoiles" },
+          { "source": "TripAdvisor", "note": "4.8/5" }
+        ],
+        "services": ["Terrasse", "Climatisation", "Parking", "Accessible PMR"]
+      }
+    },
+    {
+      "id": "2",
+      "titre": "Boulangerie Maison Fournier",
+      "image": "https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descriptionCourte": "Artisan boulanger depuis 1925, spécialités de viennoiseries",
+      "descriptionRich": "<h3>Maison Fournier</h3><p>Fondée en 1925, notre boulangerie perpétue le savoir-faire artisanal français.</p><p>Nos spécialités :</p><ul><li>Pain au levain naturel</li><li>Croissants pur beurre</li><li>Pains spéciaux aux céréales anciennes</li></ul><p>Ouvert tous les jours sauf le lundi, de 7h à 20h.</p>",
+      "adresse": "42 avenue des Ternes, 75017 Paris",
+      "region": "Île-de-France",
+      "telephone": "+33 1 44 09 85 22",
+      "link": "https://www.maisonfournier.fr",
+      "email": "reservation@bellevue-hotel.fr",
+      "latitude": 48.8787,
+      "longitude": 2.2950,
+      "autresDetails": {
+        "typeEtablissement": "Boulangerie",
+        "specialites": ["Pain de tradition", "Viennoiseries", "Pâtisseries"],
+        "recompenses": ["Meilleure baguette de Paris 2020"],
+        "services": ["Sur place", "À emporter"]
+      }
+    },
+    {
+      "id": "3",
+      "titre": "Salon de Coiffure Élégance",
+      "image": "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descriptionCourte": "Salon de coiffure haut de gamme pour hommes et femmes",
+      "descriptionRich": "<h3>Salon Élégance</h3><p>Notre équipe de stylistes expérimentés vous propose des prestations personnalisées.</p><p>Nos services :</p><ul><li>Coupes tendance</li><li>Coloration végétale</li><li>Soins du cuir chevelu</li><li>Coiffures de mariage</li></ul><p>Ouvert du mardi au samedi, de 10h à 19h. Sur rendez-vous.</p>",
+      "adresse": "8 boulevard Saint-Germain, 75006 Paris",
+      "region": "Île-de-France",
+      "telephone": "+33 1 43 26 77 88",
+      "link": "https://www.salonelégance.fr",
+      "email": "reservation@bellevue-hotel.fr",
+      "latitude": 48.8534,
+      "longitude": 2.3388,
+      "autresDetails": {
+        "typeEtablissement": "Salon de coiffure",
+        "clientele": "Mixte",
+        "gamme": "Haut de gamme",
+        "marques": ["L'Oréal Professionnel", "Kérastase", "Shu Uemura"],
+        "services": ["Café offert", "WiFi gratuit"]
+      }
+    },
+    {
+      "id": "4",
+      "titre": "Entreprise Tech Innovate",
+      "image": "https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descriptionCourte": "Start-up spécialisée en intelligence artificielle et Big Data",
+      "descriptionRich": "<h3>Tech Innovate</h3><p>Fondée en 2015, notre entreprise développe des solutions d'IA pour les secteurs de la santé et de la finance.</p><p>Nos domaines d'expertise :</p><ul><li>Analyse prédictive</li><li>Traitement du langage naturel</li><li>Systèmes de recommandation</li><li>Vision par ordinateur</li></ul><p>Pour toute demande de partenariat ou recrutement, contactez-nous.</p>",
+      "adresse": "22 rue de la Victoire, 75009 Paris",
+      "region": "Île-de-France",
+      "telephone": "+33 1 88 00 75 60",
+      "link": "https://www.techinnovate.fr",
+      "email": "reservation@bellevue-hotel.fr",
+      "latitude": 48.8738,
+      "longitude": 2.3417,
+      "autresDetails": {
+        "typeEtablissement": "Entreprise",
+        "secteur": "Technologie",
+        "taille": "50-100 employés",
+        "fondation": 2015,
+        "investisseurs": ["VC Tech Fund", "Innovation Capital"],
+        "recrutement": true
+      }
+    },
+    {
+      "id": "5",
+      "titre": "Musée d'Art Contemporain",
+      "image": "https://images.pexels.com/photos/1674049/pexels-photo-1674049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "descriptionCourte": "Collections permanentes et expositions temporaires d'art moderne",
+      "descriptionRich": "<h3>Musée d'Art Contemporain</h3><p>Situé dans un bâtiment historique rénové, notre musée présente des œuvres d'artistes français et internationaux de 1960 à nos jours.</p><p>À découvrir :</p><ul><li>3000m² d'espaces d'exposition</li><li>Plus de 500 œuvres en collection permanente</li><li>Expositions temporaires renouvelées tous les 3 mois</li><li>Ateliers pédagogiques pour enfants et adultes</li></ul><p>Ouvert du mercredi au dimanche, de 11h à 19h. Nocturne le vendredi jusqu'à 22h.</p>",
+      "adresse": "13 avenue du Président Wilson, 75116 Paris",
+      "region": "Île-de-France",
+      "telephone": "+33 1 53 67 40 00",
+      "link": "https://www.macparis.fr",
+      "email": "reservation@bellevue-hotel.fr",
+      "latitude": 48.8652,
+      "longitude": 2.2965,
+      "autresDetails": {
+        "typeEtablissement": "Musée",
+        "theme": "Art contemporain",
+        "tarif": "12€ (plein) / 8€ (réduit) / Gratuit -26 ans",
+        "services": ["Audioguides", "Librairie", "Café", "Vestiaire"],
+        "accessibilite": "Totale PMR"
+      }
+    }
+  ]
