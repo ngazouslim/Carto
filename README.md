@@ -24,12 +24,7 @@ The solution consists of a SharePoint Framework (SPFx) web part named Carto that
 | Carto web part | NGAZOU Salim form CRAFTICS - France - PARIS        |
 
 
-## Version history
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
 
 ## Disclaimer
 
